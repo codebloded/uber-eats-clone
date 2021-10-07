@@ -5,16 +5,15 @@ import Homescreen from "./Screens/HomeScreen";
 
 export default function App() {
   return (
-    // <View style={styles.screen}>
-    //   <Homescreen />
-    // </View>
-    <Safearea>
-      <Homescreen />
-    </Safearea>
+
+
+    <Homescreen />
+
   );
 }
 const styles = StyleSheet.create({
   screen: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+
   }
 })
