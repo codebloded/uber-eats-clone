@@ -1,16 +1,20 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, Platform, StyleSheet, StatusBar } from "react-native";
+import Safearea from "./Components/SafeArea";
+import Homescreen from "./Screens/HomeScreen";
 
 export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
+    // <View style={styles.screen}>
+    //   <Homescreen />
+    // </View>
+    <Safearea>
+      <Homescreen />
+    </Safearea>
   );
 }
+const styles = StyleSheet.create({
+  screen: {
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+  }
+})
