@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, SafeAreaView } from 'react-native';
+import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import Categories from '../Components/Categories';
 import HeaderTabs from '../Components/HeaderTabs';
+import ResturantItem from '../Components/ResturantItem';
 import Safearea from '../Components/SafeArea';
 import SearchBar from '../Components/SearchBar';
 
@@ -13,7 +14,12 @@ const Homescreen = () => {
                 <HeaderTabs />
                 <SearchBar />
             </View>
-            <Categories />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Categories />
+                <ResturantItem />
+                <ResturantItem />
+                <ResturantItem />
+            </ScrollView>
         </Safearea>
     );
 }
